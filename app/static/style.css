@@ -1,18 +1,18 @@
 /* Modern Dark Design System for FaceNet Facial Recognition */
 :root {
-  --bg-main: #0a0d14;
+  --bg-main: #f4f4f4;
   --bg-surface: #111622;
   --bg-surface-elevated: #171f30;
   --bg-glass: rgba(18, 24, 38, 0.72);
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(99, 102, 241, 0.5);
+  --border-focus: rgba(100, 116, 139, 0.5);
 
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
+  --text-main: #111827;
+  --text-muted: #475569;
   --text-dim: #64748b;
 
-  --accent-primary: #6366f1;
-  --accent-primary-hover: #4f46e5;
+  --accent-primary: #64748b;
+  --accent-primary-hover: #475569;
   --accent-cyan: #06b6d4;
   --accent-cyan-glow: rgba(6, 182, 212, 0.25);
   --accent-success: #10b981;
@@ -29,7 +29,7 @@
   --radius-full: 9999px;
 
   --shadow-card: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.25);
+  --shadow-glow: 0 0 25px rgba(100, 116, 139, 0.25);
   --transition-fast: 0.18s ease;
   --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -43,9 +43,7 @@
 body {
   font-family: var(--font-sans);
   background: var(--bg-main);
-  background-image: 
-    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.09) 0%, transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
+  background-image: none;
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.5;
@@ -80,19 +78,19 @@ body {
   width: 50px;
   height: 50px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  background: linear-gradient(135deg, #64748b, #94a3b8);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 20px -4px rgba(100, 116, 139, 0.4);
 }
 
 .brand-title {
   font-size: 1.65rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(120deg, #ffffff, #cbd5e1);
+  background: linear-gradient(120deg, #111827, #475569);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -142,19 +140,22 @@ body {
 }
 
 .badge-info {
-  background: rgba(99, 102, 241, 0.1);
-  color: #a5b4fc;
-  border-color: rgba(99, 102, 241, 0.25);
+  background: rgba(100, 116, 139, 0.1);
+  color: #475569;
+  border-color: rgba(100, 116, 139, 0.25);
 }
 
 .badge-accent {
   background: rgba(6, 182, 212, 0.1);
-  color: #67e8f9;
+  color: #0e7490;
   border-color: rgba(6, 182, 212, 0.25);
 }
 
 /* Nav Tabs */
 .nav-tabs {
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
   display: flex;
   gap: 8px;
   background: var(--bg-surface);
@@ -190,7 +191,7 @@ body {
 .tab-btn.active {
   color: white;
   background: var(--accent-primary);
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 14px rgba(100, 116, 139, 0.35);
 }
 
 /* Tab Panes */
@@ -203,6 +204,13 @@ body {
   display: block;
 }
 
+.tab-pane#verify-tab,
+.tab-pane#identify-tab,
+.tab-pane#metrics-tab {
+  background: #3f4652;
+  border-radius: var(--radius-lg);
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
@@ -210,6 +218,9 @@ body {
 
 /* Glass Card */
 .glass-card {
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -263,7 +274,7 @@ body {
 
 .btn-primary:hover:not(:disabled) {
   background: var(--accent-primary-hover);
-  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 18px rgba(100, 116, 139, 0.4);
 }
 
 .btn-primary:disabled {
@@ -341,8 +352,8 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(99, 102, 241, 0.2);
-  color: #818cf8;
+  background: rgba(100, 116, 139, 0.2);
+  color: #cbd5e1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -366,7 +377,7 @@ body {
 
 .drop-area:hover, .drop-area.dragover {
   border-color: var(--accent-primary);
-  background: rgba(99, 102, 241, 0.05);
+  background: rgba(100, 116, 139, 0.05);
 }
 
 .file-input {
@@ -711,8 +722,8 @@ body {
 }
 
 .match-card.is-top-match {
-  border-color: rgba(99, 102, 241, 0.4);
-  background: linear-gradient(90deg, rgba(99, 102, 241, 0.08), transparent);
+  border-color: rgba(100, 116, 139, 0.4);
+  background: linear-gradient(90deg, rgba(100, 116, 139, 0.08), transparent);
 }
 
 .match-info {
@@ -964,7 +975,7 @@ body {
 
 .ablation-insight {
   margin-top: 18px;
-  background: rgba(99, 102, 241, 0.08);
+  background: rgba(100, 116, 139, 0.08);
   border-left: 3px solid var(--accent-primary);
   padding: 12px 16px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -972,7 +983,7 @@ body {
 
 .ablation-insight h4 {
   font-size: 0.85rem;
-  color: #a5b4fc;
+  color: #cbd5e1;
   margin-bottom: 4px;
 }
 
@@ -1180,9 +1191,9 @@ body {
 }
 
 .pill-btn {
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  color: #c7d2fe;
+  background: rgba(100, 116, 139, 0.12);
+  border: 1px solid rgba(100, 116, 139, 0.25);
+  color: #cbd5e1;
   font-family: var(--font-sans);
   font-size: 0.76rem;
   font-weight: 600;
@@ -1193,10 +1204,8 @@ body {
 }
 
 .pill-btn:hover {
-  background: rgba(99, 102, 241, 0.25);
-  border-color: #818cf8;
+  background: rgba(100, 116, 139, 0.25);
+  border-color: #94a3b8;
   color: white;
   transform: translateY(-1px);
 }
-
-
